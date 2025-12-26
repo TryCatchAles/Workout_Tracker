@@ -2,6 +2,8 @@
 
 A full-stack web application for tracking workouts, managing custom exercises, and monitoring fitness progress. Built with **Spring Boot 3** and **Vanilla JS + Tailwind CSS**.
 
+> 💡 Inspired by the [Fitness Workout Tracker](https://roadmap.sh/projects/fitness-workout-tracker) project idea from roadmap.sh.
+
 ## ✨ Features
 
 ### 🔐 Authentication & Security
@@ -84,6 +86,31 @@ A full-stack web application for tracking workouts, managing custom exercises, a
 | **POST** | `/api/v1/exercises` | Create a custom exercise |
 | **DELETE** | `/api/v1/exercises/{id}` | Delete a custom exercise |
 
+## 📸 Screenshots
+
+### 1. User Dashboard
+![Dashboard](screenshots/img.png)
+*The main hub where users can view their workout history, create new plans, and manage exercises.*
+
+### 2. Creating a Workout
+![Create Modal](screenshots/img_1.png)
+*A dynamic modal form allows users to add multiple exercises, sets, reps, and weights. Note the exercise description updates automatically.*
+
+### 3. Custom Exercises
+![Custom Exercise](screenshots/img_4.png)
+*Users can extend the system library by creating their own custom exercises with specific muscle groups.*
+
+### 4. Managing the Library
+![Manage Exercises](screenshots/img_3.png)
+*A dedicated view to manage all exercises. System exercises are locked (🔒), while custom ones can be deleted (🗑️).*
+
+### 5. Secure Authentication
+![Login](screenshots/img_5.png)
+*Secure login and registration pages protected by JWT authentication.*
+
+### 6. Safety Features
+![Delete Confirmation](screenshots/img_6.png)
+*Confirmation modals prevent accidental deletion of workouts or exercises.*
 
 ## 🤝 Contributing
 

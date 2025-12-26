@@ -236,14 +236,31 @@ function addExerciseRow(exId = null, sets = 3, reps = 10, weight = 0) {
         `<option value="${ex.id}" ${ex.id == exId ? 'selected' : ''}>${ex.name}</option>`
     ).join('');
 
+    // Find the description for the currently selected exercise (or the first one if new)
+    const currentExId = exId || (availableExercises.length > 0 ? availableExercises[0].id : null);
+    const currentEx = availableExercises.find(e => e.id == currentExId);
+    const description = currentEx ? currentEx.description : '';
+
     div.innerHTML = `
-        <select class="col-span-4 p-2 border rounded ex-select">
-            ${optionsHtml}
-        </select>
-        <input type="number" class="col-span-2 p-2 border rounded ex-sets" value="${sets}">
-        <input type="number" class="col-span-2 p-2 border rounded ex-reps" value="${reps}">
-        <input type="number" class="col-span-3 p-2 border rounded ex-weight" value="${weight}">
-        <button onclick="this.parentElement.remove()" class="col-span-1 text-red-500 hover:text-red-700 font-bold">✕</button>
+        <div class="col-span-12 mb-1">
+            <select class="w-full p-2 border rounded ex-select" onchange="updateDescription(this)">
+                ${optionsHtml}
+            </select>
+            <p class="text-xs text-gray-500 italic mt-1 ex-desc">${description || 'No description available'}</p>
+        </div>
+        <div class="col-span-4 flex items-center gap-2">
+            <label class="text-xs text-gray-600">Sets:</label>
+            <input type="number" class="w-full p-2 border rounded ex-sets" value="${sets}">
+        </div>
+        <div class="col-span-4 flex items-center gap-2">
+            <label class="text-xs text-gray-600">Reps:</label>
+            <input type="number" class="w-full p-2 border rounded ex-reps" value="${reps}">
+        </div>
+        <div class="col-span-3 flex items-center gap-2">
+            <label class="text-xs text-gray-600">Kg:</label>
+            <input type="number" class="w-full p-2 border rounded ex-weight" value="${weight}">
+        </div>
+        <button onclick="this.parentElement.remove()" class="col-span-1 text-red-500 hover:text-red-700 font-bold text-xl">&times;</button>
     `;
     container.appendChild(div);
     
@@ -255,6 +272,16 @@ function addExerciseRow(exId = null, sets = 3, reps = 10, weight = 0) {
         duration: 300,
         easing: 'ease-out'
     });
+}
+
+// Helper function to update description when dropdown changes
+function updateDescription(selectElement) {
+    const exId = selectElement.value;
+    const exercise = availableExercises.find(e => e.id == exId);
+    const descElement = selectElement.nextElementSibling; // The <p> tag
+    if (exercise && descElement) {
+        descElement.innerText = exercise.description || 'No description available';
+    }
 }
 
 async function submitWorkout() {

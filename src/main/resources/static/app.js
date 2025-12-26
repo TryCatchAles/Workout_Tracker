@@ -250,15 +250,15 @@ function addExerciseRow(exId = null, sets = 3, reps = 10, weight = 0) {
         </div>
         <div class="col-span-4 flex items-center gap-2">
             <label class="text-xs text-gray-600">Sets:</label>
-            <input type="number" class="w-full p-2 border rounded ex-sets" value="${sets}">
+            <input type="number" min="1" class="w-full p-2 border rounded ex-sets" value="${sets}">
         </div>
         <div class="col-span-4 flex items-center gap-2">
             <label class="text-xs text-gray-600">Reps:</label>
-            <input type="number" class="w-full p-2 border rounded ex-reps" value="${reps}">
+            <input type="number" min="1" class="w-full p-2 border rounded ex-reps" value="${reps}">
         </div>
         <div class="col-span-3 flex items-center gap-2">
             <label class="text-xs text-gray-600">Kg:</label>
-            <input type="number" class="w-full p-2 border rounded ex-weight" value="${weight}">
+            <input type="number" min="0" step="0.5" class="w-full p-2 border rounded ex-weight" value="${weight}">
         </div>
         <button onclick="this.parentElement.remove()" class="col-span-1 text-red-500 hover:text-red-700 font-bold text-xl">&times;</button>
     `;

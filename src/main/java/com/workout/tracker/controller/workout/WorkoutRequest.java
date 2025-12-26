@@ -1,5 +1,6 @@
 package com.workout.tracker.controller.workout;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,8 +19,10 @@ public class WorkoutRequest {
     @NotBlank
     private String name;
 
+    @Valid
     @NotEmpty
     private List<ExerciseRequest> exercises;
+
 
     @Data
     @Builder

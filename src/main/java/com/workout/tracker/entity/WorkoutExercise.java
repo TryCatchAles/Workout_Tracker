@@ -1,5 +1,6 @@
 package com.workout.tracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,6 +19,7 @@ public class WorkoutExercise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore // <--- Added this to prevent infinite recursion
     @ManyToOne
     @JoinColumn(name = "workout_id")
     private Workout workout;
@@ -37,6 +39,4 @@ public class WorkoutExercise {
 
     @Column(name = "order_index", nullable = false)
     private Integer orderIndex;
-
-
 }

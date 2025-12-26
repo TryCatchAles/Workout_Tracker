@@ -1,5 +1,6 @@
 package com.workout.tracker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,7 @@ public class Workout {
     @Column(nullable = false)
     private LocalDateTime date;
 
+    @JsonIgnore // <--- Added to prevent serialization issues and loops
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private Account user;

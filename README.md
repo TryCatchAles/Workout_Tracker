@@ -88,29 +88,28 @@ A full-stack web application for tracking workouts, managing custom exercises, a
 
 ## 📸 Screenshots
 
-### 1. User Dashboard
+### 1. Secure Authentication & User Dashboard
 ![Dashboard](./screenshots/img.png)
-*The main hub where users can view their workout history, create new plans, and manage exercises.*
+*The secure login interface.*
 
-### 2. Creating a Workout
 ![Create Modal](./screenshots/img_1.png)
-*A dynamic modal form allows users to add multiple exercises, sets, reps, and weights. Note the exercise description updates automatically.*
+*The main dashboard view.*
 
-### 3. Custom Exercises
+### 2. Editing Workouts
 ![Custom Exercise](./screenshots/img_4.png)
-*Users can extend the system library by creating their own custom exercises with specific muscle groups.*
+*The edit workout interface.*
 
-### 4. Managing the Library
+### 3. Managing Exercises
 ![Manage Exercises](./screenshots/img_3.png)
 *A dedicated view to manage all exercises. System exercises are locked (🔒), while custom ones can be deleted (🗑️).*
 
-### 5. Secure Authentication
+### 4. Custom Exercises
 ![Login](./screenshots/img_5.png)
-*Secure login and registration pages protected by JWT authentication.*
+*The custom exercise creation form.*
 
-### 6. Safety Features
+### 5. Creating a Workout
 ![Delete Confirmation](./screenshots/img_6.png)
-*Confirmation modals prevent accidental deletion of workouts or exercises.*
+*The workout creation modal.*
 
 ## 🤝 Contributing
 

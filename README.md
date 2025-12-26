@@ -84,9 +84,6 @@ A full-stack web application for tracking workouts, managing custom exercises, a
 | **POST** | `/api/v1/exercises` | Create a custom exercise |
 | **DELETE** | `/api/v1/exercises/{id}` | Delete a custom exercise |
 
-## 📸 Screenshots
-
-*(You can add screenshots of your Dashboard, Modals, and Login screen here)*
 
 ## 🤝 Contributing
 
